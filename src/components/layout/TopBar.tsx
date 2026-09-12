@@ -26,19 +26,19 @@ export const TopBar: React.FC = () => {
           onClick={() => setActivePage('overview')}
           className="flex items-center gap-2.5 text-left group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg"
         >
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 text-neutral-950 flex items-center justify-center font-black tracking-tighter text-base shadow-[0_0_16px_rgba(245,158,11,0.3)] group-hover:shadow-[0_0_22px_rgba(245,158,11,0.45)] transition-all">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 text-neutral-950 flex items-center justify-center font-bold tracking-tighter text-base font-royal shadow-[0_0_16px_rgba(245,158,11,0.3)] group-hover:shadow-[0_0_22px_rgba(245,158,11,0.45)] transition-all">
             N
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-bold tracking-widest text-sm text-white font-display uppercase">
+              <span className="font-bold tracking-[0.2em] text-sm text-white font-royal uppercase transition-colors group-hover:text-amber-200">
                 NIVARA
               </span>
               <span className="text-[9px] font-mono px-1.5 py-0.5 rounded-md bg-white/[0.06] text-neutral-300 border border-white/[0.1] tracking-wider">
                 OPS • P1
               </span>
             </div>
-            <div className="text-[9px] text-neutral-400 font-mono hidden sm:block tracking-widest uppercase">
+            <div className="text-[10px] sm:text-[11px] text-amber-200/80 font-royal-sub italic tracking-[0.05em] hidden sm:block font-medium leading-tight">
               Resilience • Spatial Intelligence
             </div>
           </div>

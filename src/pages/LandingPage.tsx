@@ -53,19 +53,16 @@ export const LandingPage: React.FC = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="flex items-center gap-2.5 group cursor-pointer text-left"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 text-neutral-950 flex items-center justify-center font-black tracking-tighter text-base shadow-[0_0_18px_rgba(245,158,11,0.35)] group-hover:shadow-[0_0_24px_rgba(245,158,11,0.5)] transition-all">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 text-neutral-950 flex items-center justify-center font-bold tracking-tighter text-lg font-royal shadow-[0_0_18px_rgba(245,158,11,0.35)] group-hover:shadow-[0_0_24px_rgba(245,158,11,0.5)] transition-all">
                 N
               </div>
               <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-bold tracking-widest text-base text-white font-display uppercase">
+                <div className="flex items-center">
+                  <span className="font-bold tracking-[0.22em] text-lg sm:text-xl text-white font-royal uppercase transition-colors group-hover:text-amber-200">
                     NIVARA
                   </span>
-                  <span className="text-[9px] font-mono px-1.5 py-0.5 rounded-md bg-teal-500/15 text-teal-300 border border-teal-500/30 tracking-wider font-semibold">
-                    OFFLINE FIRST
-                  </span>
                 </div>
-                <div className="text-[9px] text-neutral-400 font-mono hidden sm:block tracking-widest uppercase">
+                <div className="text-[11px] sm:text-xs text-amber-200/85 font-royal-sub italic tracking-[0.06em] hidden sm:block font-medium leading-tight">
                   Civilian Disaster Resilience
                 </div>
               </div>
@@ -73,32 +70,32 @@ export const LandingPage: React.FC = () => {
           </div>
 
           {/* Quick Nav Anchors */}
-          <nav className="hidden md:flex items-center gap-6 text-xs font-mono text-neutral-300">
+          <nav className="hidden md:flex items-center gap-1 p-1 rounded-xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-md">
             <button
               type="button"
               onClick={() => scrollToSection('problem')}
-              className="hover:text-amber-300 transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg text-[13.5px] font-display font-medium text-neutral-300 hover:text-white hover:bg-white/[0.08] transition-all duration-200 cursor-pointer"
             >
               The Problem
             </button>
             <button
               type="button"
               onClick={() => scrollToSection('features')}
-              className="hover:text-amber-300 transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg text-[13.5px] font-display font-medium text-neutral-300 hover:text-white hover:bg-white/[0.08] transition-all duration-200 cursor-pointer"
             >
               Features
             </button>
             <button
               type="button"
               onClick={() => scrollToSection('how-it-works')}
-              className="hover:text-amber-300 transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg text-[13.5px] font-display font-medium text-neutral-300 hover:text-white hover:bg-white/[0.08] transition-all duration-200 cursor-pointer"
             >
               How It Works
             </button>
             <button
               type="button"
               onClick={() => scrollToSection('live-preview')}
-              className="hover:text-amber-300 transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg text-[13.5px] font-display font-medium text-neutral-300 hover:text-white hover:bg-white/[0.08] transition-all duration-200 cursor-pointer"
             >
               Live Preview
             </button>
@@ -106,7 +103,7 @@ export const LandingPage: React.FC = () => {
 
           {/* Primary CTA */}
           <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[11px] font-mono text-neutral-400">
+            <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[11px] font-sans text-neutral-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>Kolkata Sector Ready</span>
             </div>
@@ -114,7 +111,7 @@ export const LandingPage: React.FC = () => {
             <button
               type="button"
               onClick={() => navigateToApp('overview')}
-              className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 text-xs font-bold font-mono tracking-wide shadow-[0_0_20px_rgba(245,158,11,0.35)] hover:shadow-[0_0_26px_rgba(245,158,11,0.5)] transition-all cursor-pointer flex items-center gap-1.5 active:scale-98"
+              className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 text-xs sm:text-[13px] font-bold font-display tracking-tight shadow-[0_0_20px_rgba(245,158,11,0.35)] hover:shadow-[0_0_26px_rgba(245,158,11,0.5)] transition-all cursor-pointer flex items-center gap-1.5 active:scale-98"
             >
               <span>Enter Command Center</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -159,7 +156,7 @@ export const LandingPage: React.FC = () => {
             <button
               type="button"
               onClick={() => navigateToApp('overview')}
-              className="w-full sm:w-auto px-7 py-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 font-bold font-mono text-sm tracking-wide shadow-[0_0_25px_rgba(245,158,11,0.4)] hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] transition-all cursor-pointer flex items-center justify-center gap-2.5 active:scale-98"
+              className="w-full sm:w-auto px-7 py-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 font-bold font-display text-sm tracking-tight shadow-[0_0_25px_rgba(245,158,11,0.4)] hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] transition-all cursor-pointer flex items-center justify-center gap-2.5 active:scale-98"
             >
               <Navigation className="w-4 h-4 fill-current" />
               <span>Enter Command Center</span>
@@ -169,7 +166,7 @@ export const LandingPage: React.FC = () => {
             <button
               type="button"
               onClick={() => scrollToSection('how-it-works')}
-              className="w-full sm:w-auto px-6 py-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] hover:border-white/[0.2] text-neutral-200 hover:text-white font-medium font-mono text-sm transition-all cursor-pointer flex items-center justify-center gap-2 backdrop-blur-sm"
+              className="w-full sm:w-auto px-6 py-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] hover:border-white/[0.2] text-neutral-200 hover:text-white font-medium font-display text-sm tracking-normal transition-all cursor-pointer flex items-center justify-center gap-2 backdrop-blur-sm"
             >
               <span>How It Works</span>
               <ChevronDown className="w-4 h-4 text-neutral-400" />
@@ -763,7 +760,7 @@ export const LandingPage: React.FC = () => {
             <button
               type="button"
               onClick={() => navigateToApp('overview')}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 font-bold font-mono text-sm tracking-wide shadow-[0_0_30px_rgba(245,158,11,0.45)] hover:shadow-[0_0_40px_rgba(245,158,11,0.6)] transition-all cursor-pointer flex items-center justify-center gap-2.5 active:scale-98"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 font-bold font-display text-sm tracking-tight shadow-[0_0_30px_rgba(245,158,11,0.45)] hover:shadow-[0_0_40px_rgba(245,158,11,0.6)] transition-all cursor-pointer flex items-center justify-center gap-2.5 active:scale-98"
             >
               <Navigation className="w-4 h-4 fill-current" />
               <span>Enter Command Center</span>
@@ -782,15 +779,15 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* ─── Footer ─── */}
-      <footer className="relative z-10 border-t border-white/[0.08] bg-[#05080E] py-12 px-4 sm:px-6 lg:px-8 text-neutral-400 text-xs font-mono">
+      <footer className="relative z-10 border-t border-white/[0.08] bg-[#05080E] py-12 px-4 sm:px-6 lg:px-8 text-neutral-400 text-xs font-sans">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Col */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-amber-400 text-neutral-950 flex items-center justify-center font-bold text-xs">
+              <div className="w-6 h-6 rounded-lg bg-amber-400 text-neutral-950 flex items-center justify-center font-bold text-xs font-royal">
                 N
               </div>
-              <span className="text-white font-bold tracking-widest text-sm font-display uppercase">
+              <span className="text-white font-bold tracking-[0.2em] text-sm font-royal uppercase">
                 NIVARA
               </span>
             </div>
