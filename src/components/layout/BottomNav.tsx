@@ -9,7 +9,7 @@ export const BottomNav: React.FC = () => {
   const navItems: { id: NavigationPage; label: string; icon: React.ComponentType<{ className?: string }>; emergency?: boolean }[] = [
     { id: 'overview', label: 'Overview', icon: LayoutDashboard },
     { id: 'map', label: 'Map', icon: MapIcon },
-    { id: 'safety', label: 'Safety', icon: ShieldAlert },
+    { id: 'safety', label: 'Risk & Shelter', icon: ShieldAlert },
     { id: 'reports', label: 'Reports', icon: FileText },
     { id: 'emergency', label: 'Emergency', icon: AlertOctagon, emergency: true },
   ];

@@ -51,13 +51,13 @@ export const TopBar: React.FC = () => {
         <button
           type="button"
           onClick={() => setIsLocationModalOpen(true)}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.16] text-neutral-300 text-xs font-mono transition-all cursor-pointer shadow-sm hover:shadow-[0_0_12px_rgba(14,165,233,0.15)]"
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.2] text-neutral-200 text-xs font-display font-medium transition-all cursor-pointer shadow-sm hover:shadow-[0_0_12px_rgba(14,165,233,0.18)] active:scale-95"
           title="Click to view GPS & Location Diagnostics"
         >
-          <div className="w-4 h-4 rounded-md bg-sky-500/10 border border-sky-500/20 flex items-center justify-center shrink-0">
+          <div className="w-4 h-4 rounded-full bg-sky-500/15 border border-sky-500/30 flex items-center justify-center shrink-0">
             <MapPin className="w-2.5 h-2.5 text-sky-400" />
           </div>
-          <span className="truncate max-w-[120px] sm:max-w-[170px] text-neutral-200">
+          <span className="truncate max-w-[120px] sm:max-w-[170px] text-neutral-100 font-semibold text-xs">
             {userLocation.placeName.split(',')[0]}
           </span>
         </button>
@@ -82,39 +82,43 @@ export const TopBar: React.FC = () => {
         <button
           type="button"
           onClick={() => setIsOfflineModalOpen(true)}
-          className="hidden md:inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.16] text-xs font-mono text-neutral-300 transition-all cursor-pointer shadow-sm hover:shadow-[0_0_12px_rgba(20,184,166,0.15)]"
+          className="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.2] text-xs font-display text-neutral-200 transition-all cursor-pointer shadow-sm hover:shadow-[0_0_12px_rgba(20,184,166,0.18)] active:scale-95"
           title="Manage Offline Safety Package"
         >
-          <div className="w-4 h-4 rounded-md bg-teal-500/10 border border-teal-500/20 flex items-center justify-center shrink-0">
+          <div className="w-4 h-4 rounded-full bg-teal-500/15 border border-teal-500/30 flex items-center justify-center shrink-0">
             <HardDrive className="w-2.5 h-2.5 text-teal-400" />
           </div>
-          <span className="text-neutral-400 text-[11px]">CACHE:</span>
-          <span className="text-teal-300 font-semibold">{offlinePackage.status}</span>
+          <span className="text-neutral-400 font-sans text-[11px]">CACHE:</span>
+          <span className="text-teal-300 font-bold">{offlinePackage.status}</span>
         </button>
 
         {/* Home / Landing Page Quick Return */}
         <button
           type="button"
           onClick={navigateToLanding}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.16] text-neutral-300 hover:text-white text-xs font-mono transition-all cursor-pointer shadow-xs"
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.2] text-neutral-200 hover:text-white text-xs font-display font-medium transition-all cursor-pointer shadow-xs active:scale-95"
           title="Return to Home / Landing Showcase"
         >
           <Home className="w-3.5 h-3.5 text-amber-400" />
-          <span className="hidden sm:inline">Home</span>
+          <span className="hidden sm:inline font-semibold">Home</span>
         </button>
 
         {/* Emergency Mode Quick Action */}
         <button
           type="button"
           onClick={() => setActivePage('emergency')}
-          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer ${
+          className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-display font-black tracking-wider transition-all duration-200 cursor-pointer active:scale-95 ${
             activePage === 'emergency'
-              ? 'bg-rose-600 text-white shadow-[0_0_20px_rgba(225,29,72,0.45)] border border-rose-400'
-              : 'bg-rose-950/50 hover:bg-rose-900/60 text-rose-200 border border-rose-800/60 hover:border-rose-600/70 shadow-[0_0_14px_rgba(225,29,72,0.18)]'
+              ? 'bg-rose-600 text-white shadow-[0_0_24px_rgba(225,29,72,0.6)] border border-rose-400'
+              : 'bg-gradient-to-r from-rose-950/60 to-rose-900/40 hover:from-rose-900/70 hover:to-rose-800/50 text-rose-200 border border-rose-600/40 hover:border-rose-500/70 shadow-[0_0_16px_rgba(225,29,72,0.25)]'
           }`}
           title="Activate Emergency Mode"
         >
-          <AlertOctagon className="w-3.5 h-3.5 text-rose-400 animate-pulse" />
+          <span className="relative flex h-2 w-2 items-center justify-center shrink-0">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75 animate-ping" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-rose-400" />
+          </span>
+          <AlertOctagon className="w-3.5 h-3.5 text-rose-300 animate-pulse" />
           <span className="hidden xs:inline">EMERGENCY</span>
         </button>
       </div>

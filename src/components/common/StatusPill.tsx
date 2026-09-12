@@ -98,7 +98,7 @@ export const StatusPill: React.FC<StatusPillProps> = ({
   const c = getContent();
 
   const buttonClass = interactive
-    ? 'cursor-pointer hover:border-white/[0.2] hover:scale-[1.02] active:scale-[0.98] transition-all duration-150'
+    ? 'cursor-pointer hover:border-white/[0.25] hover:scale-[1.03] active:scale-[0.97] transition-all duration-150'
     : '';
 
   return (
@@ -106,16 +106,16 @@ export const StatusPill: React.FC<StatusPillProps> = ({
       type="button"
       onClick={onClick}
       disabled={!interactive}
-      className={`inline-flex items-center gap-2 px-2.5 py-1 rounded-lg border text-xs font-mono select-none backdrop-blur-md transition-all ${c.border} ${buttonClass}`}
+      className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-display select-none backdrop-blur-xl transition-all shadow-sm ${c.border} ${buttonClass}`}
       title={sublabel || c.label}
     >
       <span className="relative flex h-2 w-2 items-center justify-center shrink-0">
         <span className={`absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping ${c.ring}`} />
         <span className={`relative inline-flex h-1.5 w-1.5 rounded-full ${c.dot}`} />
       </span>
-      <span className="font-semibold tracking-wider text-[11px]">{c.label}</span>
+      <span className="font-bold tracking-tight text-xs">{c.label}</span>
       {sublabel && (
-        <span className="hidden sm:inline text-neutral-400 text-[10px] border-l border-white/[0.12] pl-1.5">
+        <span className="hidden sm:inline text-neutral-300 font-sans text-[11px] border-l border-white/[0.15] pl-2 font-normal">
           {sublabel}
         </span>
       )}

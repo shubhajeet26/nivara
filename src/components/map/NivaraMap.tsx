@@ -469,27 +469,30 @@ export const NivaraMap: React.FC<NivaraMapProps> = ({
         className="absolute top-3 left-3 z-10 flex flex-col gap-1.5 pointer-events-none"
       >
         <div className="flex items-center gap-2 pointer-events-auto">
-          <div className="px-3 py-1.5 rounded-xl bg-neutral-900/90 backdrop-blur-md border border-neutral-800 shadow-xl flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping shrink-0" />
-            <span className="font-mono text-xs font-bold text-white tracking-wide">
+          <div className="px-3.5 py-1.5 rounded-full bg-[#0B101C]/90 backdrop-blur-xl border border-white/[0.1] shadow-xl flex items-center gap-2">
+            <span className="relative flex h-2 w-2 items-center justify-center shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400 shadow-[0_0_6px_rgba(245,158,11,0.8)]" />
+            </span>
+            <span className="font-display font-bold text-xs text-white tracking-wide">
               {activeSector.name}
             </span>
-            <span className="text-[10px] font-mono text-amber-400 bg-amber-950/60 px-1.5 py-0.2 rounded border border-amber-800">
-              DEMO DATA
+            <span className="text-[10px] font-display font-semibold text-amber-300 bg-amber-500/15 px-2 py-0.5 rounded-full border border-amber-500/30 uppercase tracking-wider">
+              OPS GRID
             </span>
           </div>
         </div>
 
-        <div className="text-[10px] font-mono text-neutral-400 px-3 py-1 rounded-lg bg-neutral-900/80 backdrop-blur-md border border-neutral-800/80 w-fit pointer-events-auto flex items-center gap-2">
-          <span className="text-sky-400 flex items-center gap-1">
-            <MapPin className="w-3 h-3" />
+        <div className="text-[10px] font-display font-medium text-neutral-300 px-3 py-1 rounded-full bg-[#0B101C]/85 backdrop-blur-xl border border-white/[0.08] w-fit pointer-events-auto flex items-center gap-2 shadow-lg">
+          <span className="text-sky-300 flex items-center gap-1 font-semibold">
+            <MapPin className="w-3 h-3 text-sky-400" />
             {userLocation.lat.toFixed(4)}, {userLocation.lng.toFixed(4)}
           </span>
-          <span className="text-neutral-500">•</span>
-          <span>{userLocation.source.toUpperCase()}</span>
+          <span className="text-neutral-600">•</span>
+          <span className="text-neutral-400 uppercase tracking-wider">{userLocation.source}</span>
           {isWatchingLocation && (
-            <span className="text-emerald-400 flex items-center gap-1">
-              <Radio className="w-2.5 h-2.5" /> LIVE
+            <span className="text-emerald-300 font-bold flex items-center gap-1 bg-emerald-500/15 px-2 py-0.5 rounded-full border border-emerald-500/30">
+              <Radio className="w-2.5 h-2.5 animate-pulse" /> LIVE
             </span>
           )}
         </div>
@@ -503,19 +506,19 @@ export const NivaraMap: React.FC<NivaraMapProps> = ({
         {/* Search Input */}
         <div className="relative">
           <div className="relative flex items-center">
-            <Search className="w-3.5 h-3.5 text-neutral-400 absolute left-2.5 pointer-events-none" />
+            <Search className="w-3.5 h-3.5 text-neutral-400 absolute left-3 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search hazards, shelters..."
-              className="bg-neutral-900/90 backdrop-blur-md border border-neutral-800 text-xs text-white placeholder-neutral-500 rounded-xl pl-8 pr-7 py-1.5 w-44 sm:w-60 focus:outline-none focus:border-amber-500 transition-all font-mono shadow-lg"
+              className="bg-[#0B101C]/90 backdrop-blur-xl border border-white/[0.1] text-xs text-white placeholder-neutral-400 rounded-full pl-9 pr-7 py-2 w-44 sm:w-64 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/30 transition-all font-display shadow-lg"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="absolute right-2 text-neutral-400 hover:text-white p-0.5"
+                className="absolute right-2.5 text-neutral-400 hover:text-white p-0.5 cursor-pointer"
               >
                 <X className="w-3 h-3" />
               </button>

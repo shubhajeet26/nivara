@@ -22,17 +22,22 @@ export const DemoBanner: React.FC = () => {
         {/* Subtle animated amber gradient accent line on top */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-amber-500/60 to-transparent" />
 
-        <div className="flex items-center gap-2.5 font-mono text-[11px]">
-          <span className="inline-flex items-center gap-1.5 font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-md text-[10px] tracking-wider uppercase shadow-[0_0_10px_rgba(245,158,11,0.15)]">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+        <div className="flex items-center gap-3 text-xs">
+          <span className="inline-flex items-center gap-1.5 font-display font-black bg-gradient-to-r from-amber-500/25 to-amber-600/15 text-amber-300 border border-amber-500/40 px-2.5 py-1 rounded-full text-[11px] tracking-wider uppercase shadow-[0_0_12px_rgba(245,158,11,0.25)]">
+            <span className="relative flex h-2 w-2 items-center justify-center shrink-0">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75 animate-ping" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-400" />
+            </span>
             SIMULATION
           </span>
-          <span className="text-neutral-400 hidden md:inline">
+          <span className="text-neutral-400 font-sans text-xs hidden md:inline">
             Active Operations Grid:
           </span>
-          <span className="font-semibold text-amber-300 flex items-center gap-1">
+          <span className="font-display font-bold text-amber-200 text-xs sm:text-sm flex items-center gap-1.5 tracking-tight">
             {scenarioData.name}
-            <span className="text-[10px] text-amber-400/70">({scenarioData.badge})</span>
+            <span className="text-[10px] font-sans font-semibold tracking-wider uppercase px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">
+              {scenarioData.badge}
+            </span>
           </span>
         </div>
 
@@ -41,16 +46,17 @@ export const DemoBanner: React.FC = () => {
           <button
             type="button"
             onClick={toggleConnectivityMode}
-            className="px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-[11px] font-mono text-neutral-300 transition-all cursor-pointer shadow-sm hover:border-white/[0.15]"
+            className="px-3 py-1 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.2] text-xs font-display text-neutral-300 transition-all cursor-pointer shadow-sm flex items-center gap-1.5"
             title="Toggle between Online, Limited, and Offline states"
           >
-            Net: <span className="text-white font-semibold">{connectivity}</span>
+            <span className="text-neutral-400 font-sans text-[11px]">Net:</span>
+            <span className="text-white font-bold">{connectivity}</span>
           </button>
 
           <button
             type="button"
             onClick={() => setIsScenarioModalOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 font-medium text-[11px] font-mono transition-all cursor-pointer shadow-[0_0_12px_rgba(245,158,11,0.12)] hover:shadow-[0_0_18px_rgba(245,158,11,0.25)]"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-amber-600/10 hover:from-amber-500/30 hover:to-amber-600/20 border border-amber-500/40 hover:border-amber-500/60 text-amber-300 font-display font-bold text-xs transition-all cursor-pointer shadow-[0_0_15px_rgba(245,158,11,0.18)] hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] active:scale-95"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span>Switch Scenario</span>
